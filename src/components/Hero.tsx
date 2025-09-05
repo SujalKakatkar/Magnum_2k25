@@ -22,7 +22,7 @@ function Hero() {
       y: 0,
       transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" },
     }),
-  });
+  }
   return (
     <div id='home' className="w-full min-h-[70vh] xl:min-h-screen overflow-x-hidden grid place-items-center">
       {/* Background video */}
