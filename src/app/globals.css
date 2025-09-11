@@ -123,15 +123,20 @@
   }
 }
 
+
+
 html,body{
   background:black;
   overflow-x: hidden;
-  /* overflow-y: scroll; */
   scroll-behavior: smooth;
 }
+body[data-scroll-locked] {
+  padding-right: 0 !important;
+}
+
 /* navigation utilites */
 @utility navContainer{
-  @apply md:w-3/5 w-4/5 p-4 border rounded-lg  flex justify-between items-center overflow-hidden bg-zinc-900 shadow-md/20
+  @apply md:w-3/5 w-4/5 p-4 border rounded-lg  flex justify-between  items-center overflow-hidden backdrop-blur-xl shadow-md/40
 }
 
 @utility navitem{

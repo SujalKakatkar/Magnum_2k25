@@ -18,18 +18,20 @@ function About(): JSX.Element {
  };
 
  return (
-  <div id='about' className='min-h-[50vh] py-20 w-full flex justify-center items-center'>
+  <div id='about' className='min-h-[50vh] py-20 w-screen flex justify-center items-center'>
    <div className='flex justify-center items-center flex-col gap-5'>
     <motion.h1
      initial={{ opacity: 0, y: -20 }}
      whileInView={{ opacity: 1, y: 0 }}
+     viewport={{ once: true }}
      transition={{ duration: 0.8, ease: "easeOut" }}
-     className='text-2xl xl:text-4xl font-bold text-white text-center mb-4'>About Magnum 2025</motion.h1>
+     className='text-4xl xl:text-5xl font-bold w-3/4 xl:w-full text-white text-center mb-4'>About Magnum 2025</motion.h1>
     <motion.div
-     className="text-lg leading-relaxed w-1/2 text-center"
+     className="text-lg lg:text-2xl leading-relaxed w-2/4 text-center"
      variants={container}
      initial="hidden"
      whileInView="show"
+     viewport={{ once: true }}
     >
      {text.split(" ").map((word, index) => (
       <motion.span key={index} className="inline-block mr-1" variants={wordVariant}>

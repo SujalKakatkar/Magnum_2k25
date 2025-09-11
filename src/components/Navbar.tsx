@@ -10,9 +10,12 @@ import {
 } from "@/components/ui/sheet"
 import { Menu } from 'lucide-react'
 import { Button } from './ui/button'
+import { useState } from 'react'
+import Link from 'next/link'
 
 
 function Navbar() {
+  const [open, setOpen] = useState<boolean>(false)
 
   const scrolltosection = (id: string) => {
     const element = document.getElementById(id);
@@ -26,6 +29,7 @@ function Navbar() {
         top: offsetPosition,
         behavior: "smooth",
       });
+      setOpen(false); // Close the navbar after clicking a link
     }
   };
 
@@ -45,7 +49,7 @@ function Navbar() {
 
 
   return (
-    <nav className='w-full h-20 fixed top-0 z-20 mt-2 flex justify-center items-center overflow-hidden'>
+    <nav className='w-full overflow-y-hidden h-20 fixed top-0 z-20 mt-2  flex justify-center items-center '>
       <motion.div
         initial={{ y: -200, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -54,20 +58,23 @@ function Navbar() {
           damping: 14,
         }}
         className='navContainer'>
-        <div>
-          {/* <img src="" alt="" /> */}
-          <h1>Magnum</h1>
+        <div className='flex items-center space-x-2 '>
+          <img src="/photos/bcalogo.jpg" className='h-10' alt="/photos/bcalogo.jpg" />
+          {/* <h1 className='text-xl font-russo'>Magnum</h1> */}
         </div>
         {/* dekstop */}
-        <div className='hidden xl:flex xl:space-x-10 *:text-[1rem] *:cursor-pointer  pr-3'>
-          <Button variant='ghost' onClick={() => scrolltosection('home')}>Home</Button>
-          <Button variant='ghost' onClick={() => scrolltosection('about')}>About</Button>
-          <Button variant='ghost' onClick={() => scrolltosection('events')}>Events</Button>
+        <div className='hidden  xl:flex xl:space-x-5 *:text-[1rem] *:cursor-pointer  pr-3'>
+          <Button variant='link'>
+            <Link href={'/'}>Home</Link>
+          </Button>
+          <Button variant='link' onClick={() => scrolltosection('about')}>About</Button>
+          <Button variant='link' onClick={() => scrolltosection('events')}>Events</Button>
+          <Button variant='link' onClick={() => scrolltosection('Organizer')}>Organizers</Button>
         </div>
 
         {/* mobile */}
         <div className='xl:hidden'>
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen} modal={false}>
             <SheetTrigger>
               <Menu />
             </SheetTrigger>
@@ -83,8 +90,9 @@ function Navbar() {
                     <motion.li
                       variants={navItems}
                       className='navitem'
-                      onClick={() => scrolltosection('home')}
-                    >Home</motion.li>
+                    >
+                      <Link href={'/'}>Home</Link>
+                    </motion.li>
                     <motion.li
                       variants={navItems}
                       className='navitem'
@@ -95,11 +103,11 @@ function Navbar() {
                       className='navitem'
                       onClick={() => scrolltosection('events')}
                     >Events</motion.li>
-                    {/* <motion.li
+                    <motion.li
                       variants={navItems}
                       className='navitem'
-                      onClick={() => scrolltosection('contact')}
-                    >Contact</motion.li> */}
+                      onClick={() => scrolltosection('Organizer')}
+                    >Organizers</motion.li>
 
                   </motion.ul>
                 </SheetDescription>
