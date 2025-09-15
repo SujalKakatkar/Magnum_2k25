@@ -16,7 +16,7 @@ export default async function CodingEventPage({ params }: { params: Promise<{ id
     );
   }
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
+    <div className="min-h-screen flex flex-col justify-center items-center flex-1">
       <Suspense fallback={<Loading />}>
         <EventDetails event={event} />
       </Suspense>

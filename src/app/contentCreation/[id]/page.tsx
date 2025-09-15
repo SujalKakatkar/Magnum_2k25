@@ -9,13 +9,13 @@ export default async function ContentCreationEventPage({ params }: { params: Pro
  const event = eventData.find(e => e.id === Number(resolvedParams.id));
  if (!event) {
   return (
-   <div className="min-h-screen flex flex-col justify-center items-center">
+   <div className="min-h-screen flex flex-col justify-center items-center flex-1">
     <h1 className="text-xl font-bold">Event not found</h1>
    </div>
   );
  }
  return (
-  <div className="min-h-screen flex flex-col justify-center items-center">
+  <div className="min-h-screen  flex flex-col justify-center items-center flex-1">
    <Suspense fallback={<Loading />}>
     <EventDetails event={event} />
    </Suspense>
