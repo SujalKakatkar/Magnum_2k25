@@ -18,14 +18,14 @@ function About(): JSX.Element {
  };
 
  return (
-  <div id='about' className='min-h-[50vh] py-20 w-screen flex justify-center items-center'>
+  <div id='about' className='dotted min-h-[80vh] py-20 w-screen flex justify-center items-center'>
    <div className='flex justify-center items-center flex-col gap-5'>
     <motion.h1
      initial={{ opacity: 0, y: -20 }}
      whileInView={{ opacity: 1, y: 0 }}
      viewport={{ once: true }}
      transition={{ duration: 0.8, ease: "easeOut" }}
-     className='text-4xl xl:text-5xl font-bold w-3/4 xl:w-full text-white text-center mb-4'>About Magnum 2025</motion.h1>
+     className='text-5xl font-bold w-3/4 xl:w-full text-white text-center mb-4'>About Magnum 2025</motion.h1>
     <motion.div
      className="text-lg lg:text-2xl leading-relaxed w-2/4 text-center"
      variants={container}
@@ -39,14 +39,6 @@ function About(): JSX.Element {
       </motion.span>
      ))}
     </motion.div>
-    {/* <motion.p
-     initial={{ opacity: 0, y: -20 }}
-     whileInView={{ opacity: 1, y: 0 }}
-     transition={{ duration: 0.8, ease: "easeOut" }}
-    className='text-xl/relaxed xl:text-2xl/relaxed text-center w-2/3'
-    >
-     MAGNUM is a one-of-a-kind festival that blends creativity, technology, and culture into a single immersive experience. From coding challenges and AI explorations to marketing, content creation, and design, the fest brings together enthusiasts from all domains. Participate in quizzes, group events, data analysis competitions, and cybersecurity challenges, and celebrate innovation in every form. Magnum Black Box is where ideas meet action, and every talent finds its spotlight.
-    </motion.p> */}
    </div>
   </div>
  )

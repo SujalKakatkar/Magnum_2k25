@@ -1,9 +1,10 @@
 
 'use client'
 
-import { EventType } from '@/data/contants'
 import React from 'react'
 import { motion, Variants } from 'motion/react'
+import Image from 'next/image'
+import { EventType } from '@/data/contants'
 
 type EventProps = {
   event: EventType
@@ -12,8 +13,7 @@ type EventProps = {
 function EventDetails({ event }: EventProps) {
   const { title, logoImg, tagLine, description, rules, mentors, heads, requirements, skills } = event;
   const splitDescription: string[] | undefined = description?.split('. ')
-  const mentorValues = Object.values(mentors)
-  const headsValue = Object.values(heads)
+
 
 
 
@@ -32,22 +32,25 @@ function EventDetails({ event }: EventProps) {
     <div className='w-full flex flex-col justify-center items-center'>
       <div className="grid place-items-center h-screen w-screen">
         {/* Background Image with Blur */}
-        <img
-
+        {logoImg && <Image
           src={logoImg}
           alt={`${title} logo background`}
-          className="col-start-1 row-start-1 h-screen w-full object-cover filter blur-lg opacity-30"
-        />
+          fill
+          style={{ objectFit: "cover" }}
+          className="col-start-1 row-start-1 filter blur-lg opacity-40"
+          priority
+        />}
         {/* Overlay */}
         <div className="col-start-1 row-start-1 h-full w-full bg-black/20"></div>
         {/* Foreground Content */}
         <div className="col-start-1 row-start-1 flex flex-col items-center justify-center  text-center">
-          <img
+          {logoImg && <Image
             src={logoImg}
             alt={`${title} logo`}
-            className="h-[30rem] border rounded-2xl object-contain"
-
-          />
+            width={480}
+            height={300}
+            className="h-[30rem] rounded-2xl object-contain"
+          />}
           <motion.h1
             className="text-4xl xl:text-7xl py-3 font-russo md:text-5xl"
             variants={fadeUp}
@@ -70,7 +73,7 @@ function EventDetails({ event }: EventProps) {
       </div>
       <div className='py-10 w-full flex flex-col items-center'>
         {/* description */}
-        {description && <motion.div
+        {description && <motion.div id='description'
           className='py-8 w-3/4 md:w-2/4 text-center font-poppins' variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -83,7 +86,7 @@ function EventDetails({ event }: EventProps) {
           </div>
         </motion.div>}
         {/* rules */}
-        {rules && rules?.length > 0 && <motion.div className='py-8 text-center w-3/4 md:w-2/4' variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        {rules && rules?.length > 0 && <motion.div id='rules' className='py-8 text-center w-3/4 md:w-2/4' variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <h3 className='text-zinc-100/85 font-semibold text-lg md:text-2xl  font-poppins'>Rules</h3>
           <ul>
             {rules.map((rule, idx) => (
@@ -93,7 +96,7 @@ function EventDetails({ event }: EventProps) {
         </motion.div>}
 
         {/* skills */}
-        {skills && <motion.div className='py-8 text-center w-3/4 md:w-2/4' variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        {skills && <motion.div id='skills' className='py-8 text-center w-3/4 md:w-2/4' variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <h3 className='text-zinc-100/85 font-semibold text-lg md:text-2xl  font-poppins'>Skills</h3>
           <ul>
             {skills.map((skill, idx) => (
@@ -107,20 +110,45 @@ function EventDetails({ event }: EventProps) {
           <p className='text-zinc-400 py-2 lg:text-xl font-poppins'>{requirements}</p>
         </motion.div>}
         {/* mentors  */}
-        <motion.div className='py-8 text-center w-3/4 md:w-2/4' variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h3 className='text-zinc-100/85 font-semibold text-lg md:text-2xl font-poppins'>Mentors</h3>
-          <ul className='py-2'>
-            {mentorValues?.map((mentor, idx) => (
-              <li key={idx} className='text-zinc-400  lg:text-3xl font-bold text-2xl font-poppins'>{mentor}</li>
+        <motion.div id='mentors' className='py-8 text-center w-3/4 md:w-2/4' variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <h3 className='text-zinc-100/85 font-semibold text-3xl font-poppins'>Mentors</h3>
+          <ul className='py-2 flex flex-col lg:flex-row items-center justify-center gap-10'>
+            {mentors?.map((mentor, idx) => (
+              <li key={idx} className='text-zinc-400  lg:text-3xl font-bold text-2xl font-poppins flex flex-col justify-center items-center gap-2'>
+                <div className='h-60 w-60  rounded-full border-5 border-zinc-600 overflow-hidden flex justify-center items-center '>
+                  {mentor.img && (
+                    <Image
+                      src={mentor.img}
+                      alt={mentor.name[0]}
+                      width={250}
+                      height={100}
+                      className=' object-cover'
+                    />
+                  )}
+                </div>
+                <h1>{mentor.name}</h1>
+              </li>
             ))}
           </ul>
         </motion.div>
-        <motion.div className='py-8 text-center w-3/4 md:w-2/4' variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <motion.div id='heads' className='py-8 text-center w-3/4 md:w-2/4' variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
 
-          <h3 className='text-zinc-100/85 font-semibold text-lg md:text-2xl font-poppins'>Heads</h3>
-          <ul className='py-2'>
-            {headsValue?.map((head, idx) => (
-              <li key={idx} className='text-zinc-400  lg:text-3xl font-bold text-2xl font-poppins'>{head}</li>
+          <h3 className='text-zinc-100/85 font-semibold text-3xl font-poppins'>Heads</h3>
+          <ul className='py-2 flex flex-col lg:flex-row justify-center items-center gap-10'>
+            {heads?.map((head, idx) => (
+              <li key={idx} className='text-zinc-400  lg:text-3xl font-bold text-2xl font-poppins flex flex-col  gap-5'>
+                <div className='overflow-hidden flex  justify-center items-center h-60 w-60 rounded-full border-5 border-zinc-600'>
+                    {head.img && (
+                  <Image
+                  src={head.img}
+                  alt={head.name[0]}
+                  width={250}
+                  height={100}
+                  />
+                )}
+              </div>
+                <h1>{head.name}</h1>
+              </li>
             ))}
           </ul>
         </motion.div>

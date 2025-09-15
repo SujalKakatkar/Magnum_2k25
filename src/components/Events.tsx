@@ -10,13 +10,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import { eventData } from '../data/contants'
+import { eventData } from '@/data/contants'
 
 function Events(): JSX.Element {
   const cards = Array(8).fill(null);
-  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }),)
+  const autoplay = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }),)
   return (
-    <div id='events' className='min-h-[50vh] w-screen flex justify-center items-center flex-col overflow-hidden  gap-10'>
+    <div id='events' className='min-h-[80vh] w-full flex justify-center items-center flex-col overflow-hidden  gap-10'>
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

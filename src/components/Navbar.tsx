@@ -12,10 +12,13 @@ import { Menu } from 'lucide-react'
 import { Button } from './ui/button'
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 
 function Navbar() {
   const [open, setOpen] = useState<boolean>(false)
+  const pathName = usePathname()
 
   const scrolltosection = (id: string) => {
     const element = document.getElementById(id);
@@ -59,17 +62,31 @@ function Navbar() {
         }}
         className='navContainer'>
         <div className='flex items-center space-x-2 '>
-          <img src="/photos/bcalogo.jpg" className='h-10' alt="/photos/bcalogo.jpg" />
-          {/* <h1 className='text-xl font-russo'>Magnum</h1> */}
+          <Image
+            src={'/photos/bcalogo.webp'}
+            height={40}
+            width={40}
+            alt="BCA Logo"
+          />
         </div>
         {/* dekstop */}
         <div className='hidden  xl:flex xl:space-x-5 *:text-[1rem] *:cursor-pointer  pr-3'>
           <Button variant='link'>
             <Link href={'/'}>Home</Link>
           </Button>
-          <Button variant='link' onClick={() => scrolltosection('about')}>About</Button>
-          <Button variant='link' onClick={() => scrolltosection('events')}>Events</Button>
-          <Button variant='link' onClick={() => scrolltosection('Organizer')}>Organizers</Button>
+          {pathName == '/' ? (
+            <>
+              <Button variant='link' onClick={() => scrolltosection('about')}>About</Button>
+              <Button variant='link' onClick={() => scrolltosection('events')}>Events</Button>
+              <Button variant='link' onClick={() => scrolltosection('Organizer')}>Organizers</Button></>
+          ) : (
+            <>
+              <Button variant='link' onClick={() => scrolltosection('description')}>Description</Button>
+              <Button variant='link' onClick={() => scrolltosection('skills')}>Skills</Button>
+              <Button variant='link' onClick={() => scrolltosection('mentors')}>Mentors</Button>
+              <Button variant='link' onClick={() => scrolltosection('heads')}>heads</Button>
+            </>
+          )}
         </div>
 
         {/* mobile */}
@@ -93,22 +110,48 @@ function Navbar() {
                     >
                       <Link href={'/'}>Home</Link>
                     </motion.li>
-                    <motion.li
-                      variants={navItems}
-                      className='navitem'
-                      onClick={() => scrolltosection('about')}
-                    >About</motion.li>
-                    <motion.li
-                      variants={navItems}
-                      className='navitem'
-                      onClick={() => scrolltosection('events')}
-                    >Events</motion.li>
-                    <motion.li
-                      variants={navItems}
-                      className='navitem'
-                      onClick={() => scrolltosection('Organizer')}
-                    >Organizers</motion.li>
-
+                    {pathName == '/' ? (
+                      <>
+                        <motion.li
+                          variants={navItems}
+                          className='navitem'
+                          onClick={() => scrolltosection('about')}
+                        >About</motion.li>
+                        <motion.li
+                          variants={navItems}
+                          className='navitem'
+                          onClick={() => scrolltosection('events')}
+                        >Events</motion.li>
+                        <motion.li
+                          variants={navItems}
+                          className='navitem'
+                          onClick={() => scrolltosection('Organizer')}
+                        >Organizers</motion.li>
+                      </>
+                    ) : (
+                      <>
+                        <motion.li
+                          variants={navItems}
+                          className='navitem'
+                          onClick={() => scrolltosection('description')}
+                        >Description</motion.li>
+                        <motion.li
+                          variants={navItems}
+                          className='navitem'
+                          onClick={() => scrolltosection('skills')}
+                        >Skills</motion.li>
+                        <motion.li
+                          variants={navItems}
+                          className='navitem'
+                          onClick={() => scrolltosection('mentors')}
+                          >Mentors</motion.li>
+                        <motion.li
+                          variants={navItems}
+                          className='navitem'
+                          onClick={() => scrolltosection('heads')}
+                          >Heads</motion.li>
+                        </>
+                    )}
                   </motion.ul>
                 </SheetDescription>
               </SheetHeader>

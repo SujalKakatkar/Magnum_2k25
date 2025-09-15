@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Developers from "@/components/Developers";
 import Events from "@/components/Events";
 import Hero from "@/components/Hero";
 import ImgSlider from "@/components/ImgSlider";
@@ -11,7 +12,8 @@ export default function Home() {
       <ImgSlider/>
       <About />
       <Events />  
-      <Organizers/>
+      <Organizers />
+      <Developers/>
     </div>
   );
 }

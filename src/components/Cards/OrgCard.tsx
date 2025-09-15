@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { motion } from 'motion/react'
+import Image from 'next/image';
 
 function OrgCard({ name, role, photo }: { name: string, role: string, photo: string }) {
  const [isSmUp, setIsSmUp] = useState(false);
@@ -16,11 +17,12 @@ function OrgCard({ name, role, photo }: { name: string, role: string, photo: str
 
  return (
   <div className='relative flex flex-col sm:flex-row items-center gap-3 w-full'>
-   <section className='z-10'>
+   <section className='z-10 py-4 sm:py-0'>
     <Avatar className='sm:w-25 sm:h-25 h-40 w-40 '>
      <AvatarImage src={photo} className='object-cover' />
      <AvatarFallback>CN</AvatarFallback>
     </Avatar>
+    
    </section>
    {isSmUp ? (
     <motion.section

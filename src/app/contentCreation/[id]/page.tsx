@@ -1,6 +1,8 @@
+'use client'
 
 import EventDetails from "@/components/EventDetails";
 import { eventData } from "@/data/contants";
+import { Suspense } from "react";
 
 export default async function ContentCreationEventPage({ params }: { params: Promise<{ id: string }> }) {
  const resolvedParams = await params
@@ -14,7 +16,11 @@ export default async function ContentCreationEventPage({ params }: { params: Pro
  }
  return (
   <div className="min-h-screen flex flex-col justify-center items-center">
-   <EventDetails event={event} />
+   <Suspense fallback={<div className="fixed inset-0 flex items-center justify-center bg-black/60">
+    <div className="h-12 w-12 animate-spin rounded-full border-4 border-white border-t-transparent" />
+   </div>}>
+    <EventDetails event={event} />
+   </Suspense>
   </div>
  );
 }

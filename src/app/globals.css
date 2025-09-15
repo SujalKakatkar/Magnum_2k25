@@ -163,3 +163,10 @@ body[data-scroll-locked] {
 .animate-shine {
   animation: shine 6s linear infinite;
 }
+*{
+  box-sizing: border-box;
+}
+.dotted {
+  background-image: radial-gradient(#3f3e3e 1px, transparent 1px);
+  background-size: 20px 20px; /* spacing between dots */
+}
