@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/card"
 
 import { Button } from '../ui/button'
-import { useRouter } from 'next/navigation';
 import Link from 'next/link'
 
 
@@ -24,7 +23,6 @@ function EventCard({
   routeName: string;
   logoImg?: string;
 }): JSX.Element {
-  const route = useRouter()
   return (
     <Card  className="w-full object-cover overflow-hidden h-[26rem]   bg-blue border-4">
       {/* Organizer Image */}

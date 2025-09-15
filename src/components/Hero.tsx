@@ -14,7 +14,6 @@ function Hero() {
   };
 
   const letters = "MAGNUM".split("");
-  const bca = 'Bachelor of Computer Applications'.split(" ");
 
 
 
@@ -68,7 +67,7 @@ function Hero() {
           animate="visible"
           custom={1}
           className="text-[1rem] md:text-[1.25rem] lg:text-[1.75rem] font-poppins font-semibold text-zinc-600 leading-none mb-1">
-          Karnatak Law Society's
+          Karnatak Law Society&apos;s
         </motion.span>
         <motion.h3
           variants={fadeUp}

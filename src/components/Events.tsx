@@ -13,7 +13,6 @@ import Autoplay from "embla-carousel-autoplay"
 import { eventData } from '@/data/contants'
 
 function Events(): JSX.Element {
-  const cards = Array(8).fill(null);
   const autoplay = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }),)
   return (
     <div id='events' className='min-h-[80vh] w-full flex justify-center items-center flex-col overflow-hidden  gap-10'>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { motion } from 'motion/react'
-import Image from 'next/image';
 
 function OrgCard({ name, role, photo }: { name: string, role: string, photo: string }) {
  const [isSmUp, setIsSmUp] = useState(false);
