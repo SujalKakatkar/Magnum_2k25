@@ -1,6 +1,7 @@
 import About from "@/components/About";
 import Developers from "@/components/Developers";
 import Events from "@/components/Events";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import ImgSlider from "@/components/ImgSlider";
 import Organizers from "@/components/Organizers";
@@ -13,7 +14,8 @@ export default function Home() {
       <About />
       <Events />  
       <Organizers />
-      <Developers/>
+      <Developers />
+      <Footer/>
     </div>
   );
 }
