@@ -1,4 +1,4 @@
-'use client'
+
 
 import EventDetails from "@/components/EventDetails";
 import { eventData } from "@/data/contants";
