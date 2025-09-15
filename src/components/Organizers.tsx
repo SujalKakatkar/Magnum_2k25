@@ -37,7 +37,7 @@ function Organizers() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className='text-5xl font-poppins font-bold text-center'>Event Co-ordinators</motion.h1>
+          className='text-5xl font-poppins font-bold text-center'>Student Co-ordinators</motion.h1>
         <div
           className='w-full xl:w-3/4 flex flex-wrap justify-center items-center'
         >
