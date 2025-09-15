@@ -29,7 +29,7 @@ const eventData = [
     skills: ["Proficiency in Microsoft Excel", "Basic to intermediate SQL knowledge", "Familarity with data visualisation and analysation"],
     requirements: '2 laptops (1 for backup),Microsoft Excel,MySQl, PostgreSQl, Oracle 10g,Power,Bi,Tableau',
     mentors: [
-      { name: 'Prof. Rucha Bapat', img: '/photos/faculty/Prof. Rucha Bapat.webp' },
+      { name: 'Prof. Rucha Bapat', img: '/photos/faculty/rucha.webp' },
       { name: 'Ms.Pooja Rashinkar', img: '/photos/faculty/pooja.webp' },
     ],
     heads: [

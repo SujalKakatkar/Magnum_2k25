@@ -117,7 +117,7 @@ function EventDetails({ event }: EventProps) {
               <li key={idx} className='text-zinc-400  lg:text-3xl font-bold text-2xl font-poppins flex flex-col justify-center items-center gap-2'>
                 <div className='h-60 w-60  border-5 border-zinc-600 overflow-hidden flex rounded-full justify-center items-center '>
                   {mentor.img && (
-                   <img src={mentor.img} alt="" className='object-cover' />
+                   <img src={mentor.img} loading='lazy' alt="" className='object-cover' />
                     
                   )}
                 </div>
@@ -134,7 +134,7 @@ function EventDetails({ event }: EventProps) {
               <li key={idx} className='text-zinc-400  lg:text-3xl font-bold text-2xl font-poppins flex flex-col justify-center items-center  gap-5'>
                 <div className='w-60 h-60 overflow-hidden border-4 border-zinc-600 rounded-full flex justify-center items-center object-center '>
                    {head.img && (
-                    <img src={head.img} alt="" className='h-auto w-auto object-cover' />
+                    <img src={head.img} loading='lazy' alt="" className='h-auto w-auto object-cover' />
                   )}
                 </div>
                 <h1>{head.name}</h1>
