@@ -1,3 +1,4 @@
+import Loading from "@/components/Loading";
 import EventDetails from "@/components/EventDetails";
 import { eventData } from "@/data/contants";
 import { Suspense } from "react";
@@ -18,9 +19,7 @@ export default async function GamingEventPage({
  }
  return (
   <div className="min-h-screen flex flex-col justify-center items-center">
-   <Suspense fallback={<div className="fixed inset-0 flex items-center justify-center bg-black/60">
-    <div className="h-12 w-12 animate-spin rounded-full border-4 border-white border-t-transparent" />
-   </div>}>
+   <Suspense fallback={<Loading />}>
     <EventDetails event={event} />
    </Suspense>
   </div>
