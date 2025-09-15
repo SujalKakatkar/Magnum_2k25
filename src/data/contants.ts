@@ -69,7 +69,7 @@ const eventData = [
       { name: 'Ms.Aniketa Kulkarni', img: '/photos/faculty/aniketa.webp' },
     ],
     heads: [
-      { name: 'Kaustubh Shitole', img: '' },
+      { name: 'Kaustubh Shitole', img: '/photos/students/kaustubh.webp' },
       { name: 'Shravani Shiralkar', img: '/photos/students/shravani.webp' },
     ]
   },
@@ -99,7 +99,7 @@ const eventData = [
     tagLine: 'Step Into the Eye of the Code Storm',
     description: 'Welcome to Codestrom – a coding odyssey where creativity collides with logic, and only the brightest minds can survive the storm of challenges. Inspired by the dark and mysterious theme of the BlackBox, this competition pushes participants into a world where nothing is obvious, every challenge hides a twist, and every solution demands brilliance. This event is designed to test every dimension of a coder – knowledge, debugging instincts, and problem-solving mastery. Across three intense rounds, participants will dive into a journey where shadows conceal clues and logic is the only weapon.',
     rules: [],
-    requirements: '',
+    requirements: 'Any programming language of your choice can be used, but it is mandatory to know C, Java, and Python.',
     mentors: [
       { name: 'Prof. Vaishali Kulkarni', img: '/photos/faculty/Vaishali Kulkarni.webp' },
       { name: 'Ms. Sneha Vandkar', img: '/photos/faculty/sneha.webp' },
@@ -180,7 +180,7 @@ const eventData = [
     ],
     heads: [
       { name: 'Sanket gawade', img: '/photos/students/Sanket.webp' },
-      { name: 'Shashank kudale', img: undefined },
+      { name: 'Devraj Sirdesai', img: '/photos/students/devraj.webp' },
     ]
   },
   {
@@ -249,7 +249,7 @@ export const students = [
 
 const devlopers = [
   {
-    name: "Kaustubh",
+    name: "Kaustubh Shitole",
     contact: "9019869256"
   },
   {

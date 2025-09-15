@@ -115,15 +115,10 @@ function EventDetails({ event }: EventProps) {
           <ul className='py-2 flex flex-col lg:flex-row items-center justify-center gap-10'>
             {mentors?.map((mentor, idx) => (
               <li key={idx} className='text-zinc-400  lg:text-3xl font-bold text-2xl font-poppins flex flex-col justify-center items-center gap-2'>
-                <div className='h-60 w-60  rounded-full border-5 border-zinc-600 overflow-hidden flex justify-center items-center '>
+                <div className='h-60 w-60  border-5 border-zinc-600 overflow-hidden flex rounded-full justify-center items-center '>
                   {mentor.img && (
-                    <Image
-                      src={mentor.img}
-                      alt={mentor.name[0]}
-                      width={250}
-                      height={100}
-                      className=' object-cover'
-                    />
+                   <img src={mentor.img} alt="" className='object-cover' />
+                    
                   )}
                 </div>
                 <h1>{mentor.name}</h1>
@@ -136,17 +131,12 @@ function EventDetails({ event }: EventProps) {
           <h3 className='text-zinc-100/85 font-semibold text-3xl font-poppins'>Heads</h3>
           <ul className='py-2 flex flex-col lg:flex-row justify-center items-center gap-10'>
             {heads?.map((head, idx) => (
-              <li key={idx} className='text-zinc-400  lg:text-3xl font-bold text-2xl font-poppins flex flex-col  gap-5'>
-                <div className='overflow-hidden flex  justify-center items-center h-60 w-60 rounded-full border-5 border-zinc-600'>
-                    {head.img && (
-                  <Image
-                  src={head.img}
-                  alt={head.name[0]}
-                  width={250}
-                  height={100}
-                  />
-                )}
-              </div>
+              <li key={idx} className='text-zinc-400  lg:text-3xl font-bold text-2xl font-poppins flex flex-col justify-center items-center  gap-5'>
+                <div className='w-60 h-60 overflow-hidden border-4 border-zinc-600 rounded-full flex justify-center items-center object-center '>
+                   {head.img && (
+                    <img src={head.img} alt="" className='h-auto w-auto object-cover' />
+                  )}
+                </div>
                 <h1>{head.name}</h1>
               </li>
             ))}
