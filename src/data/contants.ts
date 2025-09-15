@@ -206,7 +206,7 @@ const eventData = [
 const organizersData = [
   {
     name: "Dr. Venugopal Jalihal",
-    role: "Principal of KLS Gogte College Of Commerce",
+    role: "Principal KLS Gogte College Of Commerce",
     photo: "/photos/faculty/venugopal.webp",
   },
   {
