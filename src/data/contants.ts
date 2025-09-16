@@ -93,11 +93,11 @@ const eventData = [
   },
   {
     id: 5,
-    title: 'Code Storm',
+    title: 'CodeStorm',
     logoImg: '/photos/eventlogos/coding.webp',
     routeName: 'coding',
-    tagLine: 'Step Into the Eye of the Code Storm',
-    description: 'Welcome to Codestrom – a coding odyssey where creativity collides with logic, and only the brightest minds can survive the storm of challenges. Inspired by the dark and mysterious theme of the BlackBox, this competition pushes participants into a world where nothing is obvious, every challenge hides a twist, and every solution demands brilliance. This event is designed to test every dimension of a coder – knowledge, debugging instincts, and problem-solving mastery. Across three intense rounds, participants will dive into a journey where shadows conceal clues and logic is the only weapon.',
+    tagLine: 'Step Into the Eye of the CodeStorm',
+    description: 'Welcome to CodeStorm – a coding odyssey where creativity collides with logic, and only the brightest minds can survive the storm of challenges. Inspired by the dark and mysterious theme of the BlackBox, this competition pushes participants into a world where nothing is obvious, every challenge hides a twist, and every solution demands brilliance. This event is designed to test every dimension of a coder – knowledge, debugging instincts, and problem-solving mastery. Across three intense rounds, participants will dive into a journey where shadows conceal clues and logic is the only weapon.',
     rules: [],
     requirements: 'Any programming language of your choice can be used, but it is mandatory to know C, Java, and Python.',
     mentors: [
