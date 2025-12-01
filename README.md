@@ -1,1 +1,1 @@
-Magnum is an intercollege fest . and I have build thise Website to showcase what all events includes in the Magnum
+Magnum is an intercollege fest . and I have built this Website to showcase what all events includes in the Magnum
